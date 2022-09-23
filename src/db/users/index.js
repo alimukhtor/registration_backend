@@ -2,10 +2,9 @@ import express from "express";
 import UsersModel from "./schema.js";
 import bcrypt from "bcrypt";
 import { JWTAuthenticate } from "../../auth/tools.js";
-import { JWTAuthMiddleware } from "../../auth/token.js";
 
 const userRouter = express.Router();
-userRouter.get("/", JWTAuthMiddleware, async (req, res, next) => {
+userRouter.get("/", async (req, res, next) => {
   try {
     const user = await UsersModel.find();
     res.send(user);
