@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import listEndpoints from 'express-list-endpoints'
 const {MONGO_URL} = process.env
 const server = express()
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 1337
 
 // *********************** IMPORT ROUTES ******************
 import userRouter from './db/users/index.js'
